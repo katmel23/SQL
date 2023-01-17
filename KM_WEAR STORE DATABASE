@@ -1,0 +1,20 @@
+CREATE TABLE km_wear(id INTEGER PRIMARY KEY,gender TEXT,bottom_type TEXT,color TEXT,price INTEGER,size INTEGER);
+insert into km_wear values (1,'M','Jeans','Dark Blue', 50.00, 40);
+insert into km_wear values (2,'M','Jeans','Dark Blue', 50.00, 42);
+insert into km_wear values (3,'M','Jeans','Dark Blue', 60.00, 44);
+insert into km_wear values (4,'M','Jeans','Dark Blue Faded', 50.50, 40);
+insert into km_wear values (5,'M','Jeans','Black', 90.50, 42);
+insert into km_wear values (6,'M','Jeans','Black Faded', 90.00, 44);
+insert into km_wear values (7,'M','Jeans','Black Faded', 97.50, 46);
+insert into km_wear values (8,'F','Short Skirt','Green', 100.00, 12);
+insert into km_wear values (9,'F','Short Skirt','Red', 100.00, 10);
+insert into km_wear values (10,'F','Short Skirt','Green', 110.00, 14);
+insert into km_wear values (11,'F', 'Pant','White', 100.50, 12);
+insert into km_wear values (12,'F','Pant','light blue', 199.99, 26);
+insert into km_wear values (13,'F','Jeans','Dark Blue', 150, 12);
+insert into km_wear values (14,'F','Jeans','light Blue', 169.99, 10);
+insert into km_wear values (15,'F','Jeans', 'Black', 150, 10);
+
+select * from km_wear order by price;
+
+select bottom_type, sum(price) from km_wear group by bottom_type
