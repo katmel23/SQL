@@ -1,0 +1,30 @@
+CREATE TABLE gospel_singers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    nationality TEXT);
+    
+INSERT INTO gospel_singers (fullname, age, nationality) VALUES ("Kirk Franklin", 52, "US");
+INSERT INTO gospel_singers (fullname, age, nationality) VALUES ("Tasha Cobbs Leonard", 41, "US");
+INSERT INTO gospel_singers (fullname, age, nationality) VALUES ("Yolanda Adams", 61, "US");
+INSERT INTO gospel_singers (fullname, age, nationality) VALUES ("Israel Houhton", 51, "US");
+INSERT INTO gospel_singers (fullname, age, nationality) VALUES ("Travis Greene", 39, "US");
+
+CREATE table songs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    singer_id INTEGER,
+    top_hits TEXT,
+    album TEXT);
+    
+INSERT INTO songs (singer_id, top_hits, album) VALUES (1, "Melodies From Heaven", "Watcha Lookin 4");
+INSERT INTO songs (singer_id, top_hits, album) VALUES (2, "Break Every Chain", "Grace");
+INSERT INTO songs (singer_id, top_hits, album) VALUES (3, "The Battle is the Lords", "Save the World");
+INSERT INTO songs (singer_id, top_hits, album) VALUES (4, "Friend of God", "Live from Another Level");
+INSERT INTO songs (singer_id, top_hits, album) VALUES (5, "Intentional", "The Hill");
+
+
+/*Return total top_hits for each singer*/
+SELECT gospel_singers.fullname, songs.top_hits
+FROM gospel_singers
+JOIN songs
+ON gospel_singers.id = songs.singer_id;
